@@ -1,0 +1,36 @@
+GitHub PR Link: https://bitbucket.org/Demo/rg-platform/pull-requests/1327
+PR Title: Implement AI-powered recruitment agent using A2A protocol
+
+PR Description:
+- This PR introduces the first version of our autonomous recruitment agent powered by AI and built on the A2A communication protocol. Key highlights:
+- Integrated A2A protocol handler for secure agent messaging
+- Recruitment agent built using Node.js with OpenAI GPT API integration
+- AI can parse candidate profiles, evaluate job fit, and schedule interviews
+- Frontend dashboard added to monitor agent conversations
+- Unit and integration test coverage included
+- Logs structured for audit trail per message exchange
+
+Files Changed:
+- /services/agents/recruitmentAgent.js
+- /services/agents/protocolHandlers/a2aHandler.js
+- /api/agents/v1/agentMessages.js
+- /ui/agents/RecruitmentDashboard.jsx
+- /styles/agents/recruitment.css
+- /tests/recruitmentAgent.test.js
+- /docs/protocols/A2A-spec.md
+
+PR Raised By: Ronak G
+PR Created On: 2025-08-07
+PR Approved By: Priya M, Aditya M, Neha B
+PR Merged On: 2025-08-08
+PR Status: Merged
+
+---
+
+Additional Notes:
+- A2A protocol conforms to DIDComm v2 specs for agent messaging
+- Agent initiates conversation with candidates via secure channels
+- AI decision logic based on skill-matching, job description parsing
+- Feature flag: enableRecruitmentAgent=true
+- Supports multi-agent handoff to HR agent for offer dispatch
+- Includes message replay mode for debugging AI responses

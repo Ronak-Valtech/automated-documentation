@@ -1,0 +1,31 @@
+GitHub PR Link: https://bitbucket.org/Demo/rg-platform/pull-requests/1289
+PR Title: Add persistent wishlist functionality for logged-in users
+
+PR Description:
+This PR introduces the backend and frontend logic for the wishlist feature. Key highlights:
+- Added a heart for Add to Wishlist" button on PDP
+- Wishlist service created using Node.js (microservice)
+- Redis used for temporary caching
+- Data syncs to PostgreSQL via cron
+- Basic unit and integration tests included
+
+Files Changed:
+- /cartridge/rg-wishlist/pdpWishlistButton.js
+- /cartridge/rg-wishlist/wishlistService.js
+- /cartridge/rg-wishlist/wishlistAPI.js
+- /cartridge/rg-wishlist/wishlist.css
+- /tests/wishlistService.test.js
+- /templates/pdp.html
+
+PR Raised By: Ronak G
+PR Created On: 2025-07-15
+PR Approved By: Aditya M, Neha B, Chetna G
+PR Merged On: 2025-07-20
+PR Status: Merged
+
+---
+
+Additional Notes:
+- Figma designs were provided by UI/UX team
+- Feature toggle enabled via `enableWishlist=true` in config
+- Requires login; guest users are shown tooltip explaining login need

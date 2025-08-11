@@ -1,0 +1,36 @@
+GitHub PR Link: https://bitbucket.org/Demo/rg-platform/pull-requests/1334
+PR Title: Fix screen overflow issues on responsive layouts
+
+PR Description:
+- This PR addresses layout overflow issues across several pages that caused horizontal scrolling or content cut-offs on smaller screens. Key highlights:
+- Fixed improper width constraints in container elements
+- Replaced width: 100vw with max-width: 100% where needed
+- Added overflow-x: hidden to body on affected templates
+- Adjusted grid layouts and flex containers for smaller breakpoints
+- Updated media queries for better control across devices
+- Added visual regression tests using Percy snapshots
+
+Files Changed:
+- /public/styles/global.css
+- /templates/homepage.html
+- /templates/productDetail.html
+- /templates/cartPage.html
+- /ui/components/Footer.jsx
+- /tests/responsiveLayout.test.js
+
+PR Raised By: Chetna R
+PR Created On: 2025-08-08
+PR Approved By: Ronak G, Bhavika T, Neha B
+PR Merged On: 2025-08-08
+PR Status: Merged
+
+---
+
+Additional Notes:
+- Issue reported by QA team during mobile Safari testing
+- Affected devices: iPhone SE, Galaxy Fold (inner screen)
+- Root cause: fixed-width elements inside flex wrappers
+- Verified across all breakpoints: 320px to 1920px
+- Feature flag not required; CSS-level fix
+- Added helper class .no-x-overflow for future use
+- Overflow logging removed after final validation
