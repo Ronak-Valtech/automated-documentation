@@ -1,0 +1,37 @@
+GitHub PR Link: https://bitbucket.org/Demo/rg-platform/pull-requests/1336
+PR Title: Add uptime tracker and alerting system for site availability
+
+PR Description:
+- This PR implements backend logic and monitoring scripts to track site availability and trigger alerts when the site is down or unresponsive. Key highlights:
+- New health check endpoint /health/ping added
+- Scheduled uptime pings every 60 seconds using cron-based service
+- Integrated with Slack + email for alert notifications
+- Response time and status logged to monitoring DB
+- Failure threshold config: 3 consecutive failures triggers alert
+- Added dashboards for uptime history (Grafana-ready)
+- Graceful failover logging for maintenance mode
+
+Files Changed:
+- /monitoring/uptimeMonitorService.js
+- /routes/healthCheck.js
+- /configs/uptimeConfig.json
+- /scripts/slackAlertSender.js
+- /logs/uptime.log
+- /tests/uptimeMonitor.test.js
+
+PR Raised By: Ronak G
+PR Created On: 2025-08-08
+PR Approved By: Saumitra S, Aditya M, Rutuja M
+PR Merged On: 2025-08-08
+PR Status: Merged
+
+---
+
+Additional Notes:
+- Initial alerting integrated with Slack #infra-alerts channel
+- Dashboard available at /admin/uptime-monitor (admin-only)
+- Failures ignored during maintenance windows (configurable)
+- Uses native fetch with fallback retries for external endpoints
+- Feature toggle: enableUptimeMonitor=true
+- Email alerts use SendGrid integration
+- Setup compatible with both staging and production environments

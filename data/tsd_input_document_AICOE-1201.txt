@@ -1,0 +1,37 @@
+GitHub PR Link: https://bitbucket.org/Demo/rg-platform/pull-requests/1331
+PR Title: Add support for editing input image from N8N workflow node
+
+PR Description:
+- This PR introduces backend logic and API integration to allow input images sent via N8N workflows to be programmatically edited. Key highlights:
+- New /n8n/image/edit endpoint added
+- Supports crop, resize, grayscale, rotate, and watermark options
+- Utilizes Sharp library for image manipulation
+- Images processed in-memory and returned as base64 or stored in S3
+- Added UI preview for before/after comparison
+- Unit and integration test coverage for all operations
+
+Files Changed:
+- /services/n8n/imageEditService.js
+- /routes/n8n/imageEditRoutes.js
+- /utils/imageTransformUtils.js
+- /ui/n8n/ImageEditPreview.jsx
+- /styles/n8n/imageEdit.css
+- /tests/imageEditService.test.js
+- /docs/api/n8n-image-edit.md
+
+PR Raised By: Nikhil P
+PR Created On: 2025-08-08
+PR Approved By: Ronak G, Bhavika T, Aditya M
+PR Merged On: 2025-08-08
+PR Status: Merged
+
+---
+
+Additional Notes:
+- Image editing operations defined via query parameters or JSON body
+- Workflow can now pass in image buffer and receive edited output in real time
+- Errors handled for corrupt, unsupported, or missing image data
+- Logging enabled with request ID tracking for N8N job reference
+- Feature toggle: enableN8NImageEdit=true
+- Supported file types: JPG, PNG, WebP
+- Can be extended to future face-blurring or text overlay modules
